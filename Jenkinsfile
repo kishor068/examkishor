@@ -40,6 +40,15 @@ pipeline {
                     }
                 }
 
+                 stage('Sonar') {
+                                    steps {
+                                        echo "Running Sonar...."
+                                bat """cd ${WORKSPACE}\\examkishor
+                                mvn sonar:sonar"""
+                                    }
+                                }
+
+
 
 
     }
