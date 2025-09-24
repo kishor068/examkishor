@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: examkishor
+  cloud:
+    config:
+      enabled: false
+server:
+  port: 6010
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+# log4j Configuration
+logging:
+  level:
+    root: info
+    com.example.controller: debug
+  file:
+    name: D:/logInfo.log
+  pattern:
+    level: "%d{\"yyyy/MM/dd HH:mm:ss,SSS\"} [%p] [%t] %M\\(%F:%L\\) - %msg%n"
+    file: "%d{\"yyyy/MM/dd HH:mm:ss,SSS\"} [%p] [%t] %M\\(%F:%L\\) - %msg%n"
+    # console: "%d{\"yyyy/MM/dd HH:mm:ss,SSS\"} [%p] [%t] %M\\(%F:%L\\) - %msg%n"
+  # pattern.dateformat: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+  logback:
+    rollingpolicy:
+      file-name-pattern: "${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz"
+  # appender.rolling.name: DexamkishorailyRollingFile
